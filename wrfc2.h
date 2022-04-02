@@ -11,12 +11,14 @@
 
 
 // code version
-#define VERSION "0.0.1"
-#define BUILD "22"
+#define VERSION "0.2.0"
+#define BUILD "32"
 
 #include <Wire.h>
+#include <cmath>
 
 #include "display.h"
+#include "dps310.h"
 
 
 
