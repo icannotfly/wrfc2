@@ -12,4 +12,5 @@ icannotfly's Water Rocket Flight Computer, mk2
 
 ## Hardware Required
 - [Adafruit Adalogger M0](https://www.adafruit.com/product/2796)
-- [Adafruit 128x64 OLED Featherwing](https://www.adafruit.com/product/4650) (added 0.0.1)
+- [Adafruit 128x64 OLED Featherwing](https://www.adafruit.com/product/4650) (added in 0.1.0)
+- [Adafruit DPS310 Barometer](https://www.adafruit.com/product/4494) (added in 0.2.0)
