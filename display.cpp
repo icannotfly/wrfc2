@@ -74,9 +74,9 @@ bool splash[SPLASH_DIMENSIONS][SPLASH_DIMENSIONS] =
 
 
 
-bool initDisplay(Adafruit_SH1107 * display)
+void initDisplay(Adafruit_SH1107* display)
 {
-    if (display->begin(0x3C, true)) /*Address 0x3C default*/
+    if (display->begin(0x3C, true))
     {
         display->clearDisplay();
         display->setRotation(1);
@@ -101,9 +101,13 @@ bool initDisplay(Adafruit_SH1107 * display)
         resetDisplay(display);
         display->display();
 
-        return true;
+        return;
     }
-    return false;
+    else
+    {
+        Serial.print("Unable to contact screen on 0x3C");
+        while (1) {};
+    }
 }
 
 
