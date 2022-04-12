@@ -27,3 +27,14 @@
 
 ### Fixed
 - Version number typo in readme.
+
+
+
+## 0.2.1 - 2022-04-12
+
+### Added
+- Added a function to set the screen cursor position based on what data should be displayed.
+
+### Changed
+- Error codes are no longer returned by initialization functions.
+- Getter functions now return bools instead of specific error codes.

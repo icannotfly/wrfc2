@@ -3,23 +3,22 @@
 // (c) 2022 icannotfly
 //
 
-
-
-#ifndef WRFC2_H
-#define WRFC2_H
+#pragma once
 
 
 
 // code version
-#define VERSION "0.2.0"
-#define BUILD "32"
+#define VERSION "0.3.0"
+#define BUILD "56"
 
 #include <Wire.h>
 #include <cmath>
+#include <Adafruit_SH110X.h>
 
-#include "display.h"
-#include "dps310.h"
+#include "display.h"	// screen
+#include "dps310.h"		// barometer
 
 
 
-#endif
+void setup();
+void loop();
