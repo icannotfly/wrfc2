@@ -10,7 +10,7 @@
 
 
 // globals (eww, i know)
-Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
+extern Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
 
 
 
@@ -20,12 +20,7 @@ void setup()
 	initDisplay(&display);
 	
 	// barometer
-	eBaroErrorCode baroInitCode = initDPS310();
-	if (baroInitCode != eBaroErrorCode::NONE)
-	{
-		Serial.print("BARO ERROR");	// TODO lol please do something more useful than this, blink a LED or something sheesh
-		while(1);
-	}
+	initDPS310();
 }
 
 
@@ -45,26 +40,37 @@ void loop()
 
 	float baroTemp;
 	float baroPres;
-	getBaroValues(&baroTemp, &baroPres);
-	
-	display.print("t: ");
-	display.print(baroTemp);
-	display.print(" C\n");
 
-	display.print("p: ");
-	display.print(baroPres);
-	display.print(" hPa\n");
+	if (getBaroValues(&baroTemp, &baroPres))
+	{
+		display.setCursor(0, OFFSET_TEMPERATURE);
+		display.print("t: ");
+		display.print(baroTemp);
+		display.print(" C");
 
-	display.print("a0: ");
-	display.print(calcAltitude(baroPres, baroTemp));
-	display.print(" m\n");
+		display.setCursor(0, OFFSET_PRESSURE);
+		display.print("p: ");
+		display.print(baroPres);
+		display.print(" hPa");
 
-	display.print("a1: ");
-	display.print(calcAltitude(baroPres, baroTemp, 1));
-	display.print(" m\n");
+		display.setCursor(0, OFFSET_ALTITUDE0);
+		display.print("a0: ");
+		display.print(calcAltitude(baroPres, baroTemp));
+		display.print(" m");
+
+		display.setCursor(0, OFFSET_ALTITUDE1);
+		display.print("a1: ");
+		display.print(calcAltitude(baroPres, baroTemp, 1));
+		display.print(" m");
+	}
+	else
+	{
+		display.setCursor(0, OFFSET_ERROR);
+		display.print("! no values");
+	}
 
 
-	
+
 	display.display();
-	delay(250);
+	delay(100);
 }

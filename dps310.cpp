@@ -7,27 +7,29 @@ Adafruit_DPS310 dps310;
 
 
 
-eBaroErrorCode initDPS310()
+void initDPS310()
 {
 	if (!dps310.begin_I2C(DPS310_I2CADDR_DEFAULT))
 	{
-		return eBaroErrorCode::couldNotConnect;
+		// TODO print to both screen and serial (and log?)
+		Serial.println("Unable to contact barometer on 0x77.");
+		return;
+		//return ErrorCode::barometerCouldNotConnect;
 	}
 
 	// configure
 	dps310.configurePressure(DPS310_64HZ, DPS310_64SAMPLES);
 	dps310.configureTemperature(DPS310_64HZ, DPS310_64SAMPLES);
-
-	return eBaroErrorCode::NONE;
 }
 
 
 
-eBaroErrorCode getBaroValues(float* temperature, float* pressure)
+bool getBaroValues(float* temperature, float* pressure)
 {
 	if (!dps310.temperatureAvailable() || !dps310.pressureAvailable())
 	{
-		return eBaroErrorCode::noValuesAvailable;
+		// TODO print to serial and to log, maybe to screen too
+		return false;
 	}
 
 	sensors_event_t temperatureEvent;
@@ -35,11 +37,12 @@ eBaroErrorCode getBaroValues(float* temperature, float* pressure)
 	dps310.getEvents(&temperatureEvent, &pressureEvent);
 	if (temperatureEvent.temperature == NAN || pressureEvent.pressure == NAN)
 	{
-		return eBaroErrorCode::noValuesReported;
+		// TODO maybe print error?
+		return false;
 	}
 	*temperature = temperatureEvent.temperature;
 	*pressure = pressureEvent.pressure;
-	return eBaroErrorCode::NONE;
+	return true;
 }
 
 
