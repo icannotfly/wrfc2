@@ -8,7 +8,7 @@
 
 
 // code version
-#define VERSION "0.3.0"
+#define VERSION "0.2.1"
 #define BUILD "56"
 
 #include <Wire.h>
