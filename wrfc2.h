@@ -11,14 +11,8 @@
 #define VERSION "0.2.1"
 #define BUILD "56"
 
-#include <Wire.h>
-#include <cmath>
-#include <Adafruit_SH110X.h>
-
-#include "display.h"	// screen
-#include "dps310.h"		// barometer
 
 
+Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
 
-void setup();
-void loop();
+StateMachine sm = StateMachine();

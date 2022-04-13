@@ -5,12 +5,16 @@
 
 
 
-#include "wrfc2.h"
+#include <Arduino.h>
+#include <Wire.h>
+#include <cmath>
+#include <Adafruit_SH110X.h>
+#include <StateMachine.h>
 
-
-
-// globals (eww, i know)
-extern Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
+#include "wrfc2.h"		// main
+#include "display.h"	// screen
+#include "states.h"		// state machine
+#include "dps310.h"		// barometer
 
 
 

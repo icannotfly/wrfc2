@@ -1,6 +1,7 @@
 #pragma once
 
-#include "wrfc2.h"
+//#include "wrfc2.h"
+#include <Adafruit_SH110X.h>    // already included in wrfc2.h
 #include <Adafruit_GFX.h>
 
 
