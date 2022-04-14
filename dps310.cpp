@@ -47,21 +47,10 @@ bool getBaroValues(float* temperature, float* pressure)
 
 
 
-float calcAltitude(float pressure, float temperature, uint method)
+float calcAltitude(float pressure, float temperature)
 {
-	// TODO decide on a method
+	return (pow((SEA_LEVEL_PRESSURE / pressure), 0.190223) - 1.0) * (temperature + 273.15) / 0.0065;
 
-	switch (method)
 	{
-		// found at ???
-	case 1:
-		return log(pressure * 100.0 / 101325.0) * 287.053 * (temperature + 459.67) * (5.0 / 9.0) / -9.8; // bro what the FUCK
-		break;
-		
-		// found this one on the arduino forums
-	case 0:
-	default:
-		return (pow((SEA_LEVEL_PRESSURE / pressure), 0.190223) - 1.0) * (temperature + 273.15) / 0.0065;
-		break;
 	}
 }
