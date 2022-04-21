@@ -50,7 +50,37 @@ bool getBaroValues(float* temperature, float* pressure)
 float calcAltitude(float pressure, float temperature)
 {
 	return (pow((SEA_LEVEL_PRESSURE / pressure), 0.190223) - 1.0) * (temperature + 273.15) / 0.0065;
+}
 
+
+
+float calibrateGroundAltitude()
+{
+	Array<float, NUM_GROUND_ALT_READINGS_TO_TAKE> groundAltReadings;
+	uint numGroundAltReadingsTaken = 0;
+
+	float baroTemp;
+	float baroPres;
+
+	while (numGroundAltReadingsTaken < NUM_GROUND_ALT_READINGS_TO_TAKE)
 	{
+		if (getBaroValues(&baroTemp, &baroPres))
+		{
+			groundAltReadings[numGroundAltReadingsTaken] = calcAltitude(baroPres, baroTemp);
+			numGroundAltReadingsTaken++;
+
+			// TODO log readings to somewhere maybe
+			// TODO log progress somewhere maybe
+		}
 	}
+
+	float groundAlt = 0;
+	for (uint i = 0; i < NUM_GROUND_ALT_READINGS_TO_TAKE; i++)
+	{
+		groundAlt += groundAltReadings[i];
+	}
+	groundAlt /= float(NUM_GROUND_ALT_READINGS_TO_TAKE);
+	// TODO print result?
+
+	return groundAlt;
 }
