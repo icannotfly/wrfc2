@@ -41,7 +41,7 @@
 
 
 
-## 0.3.0 - 2022-
+## 0.3.0 - 2022-04-22
 
 ### Added 
 - Implemented state machine.
@@ -53,9 +53,6 @@
 ### Changed
 - There is now only one method available for converting pressure and temperature into altitude.
 - Tickrate has been changed from 10Hz to 4Hz for testing.
-
-### Removed
-- 
 
 ### Fixed
 - Cleaned up includes.
