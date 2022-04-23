@@ -1,31 +1,27 @@
 #pragma once
 
-//#include "wrfc2.h"
-#include <Adafruit_SH110X.h>    // already included in wrfc2.h
+#include <Adafruit_SH110X.h>
 #include <Adafruit_GFX.h>
 
 
 
-// screen layout:
-// line	y-ofst	description	
-// ----	----	----
-// 1	0		version
-// 2	8
-// 3	16		temperature
-// 4	24		pressure
-// 5	32		altitude (method 0)
-// 6	40		altitude (method 1)
-// 7	48	
-// 8	56		error
+// screen layout
+#define OFFSET_LINE_1 0
+#define OFFSET_LINE_2 8
+#define OFFSET_LINE_3 16
+#define OFFSET_LINE_4 24
+#define OFFSET_LINE_5 32
+#define OFFSET_LINE_6 40
+#define OFFSET_LINE_7 48
+#define OFFSET_LINE_8 56
 
-#define OFFSET_VERSION 0
-#define OFFSET_LINE2 8
-#define OFFSET_TEMPERATURE 16
-#define OFFSET_PRESSURE 24
-#define OFFSET_ALTITUDE0 32
-#define OFFSET_ALTITUDE1 40
-#define OFFSET_LINE7 48
-#define OFFSET_ERROR 56
+#define OFFSET_STATE OFFSET_LINE_2
+#define OFFSET_TEMP_PRES OFFSET_LINE_3
+#define OFFSET_ALTITUDE OFFSET_LINE_4
+#define OFFSET_DELTA_ALTITUDE OFFSET_LINE_5
+#define OFFSET_MAX_ALT OFFSET_LINE_6
+#define OFFSET_ASCENT_RATE OFFSET_LINE_7
+#define OFFSET_DT OFFSET_LINE_8
 
 
 
