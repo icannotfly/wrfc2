@@ -4,15 +4,21 @@
 //
 
 #pragma once
+#ifndef WRFC2_H
+#define WRFC2_H
 
 
 
 // code version
-#define VERSION "0.2.1"
-#define BUILD "56"
+#define VERSION "0.3.0"
+#define BUILD "98"
 
 
 
-Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
+// types
+typedef unsigned long ulong;
+typedef unsigned int uint;
 
-StateMachine sm = StateMachine();
+
+
+#endif

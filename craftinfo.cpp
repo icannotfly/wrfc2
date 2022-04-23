@@ -11,6 +11,20 @@ CraftInfo::CraftInfo() :
 
 
 
+bool CraftInfo::readyToLaunch()
+{
+	return bReadyToLaunch_;
+}
+
+
+
+void CraftInfo::setReadyToLaunch(bool bReadyToLaunch /*= true*/)
+{
+	bReadyToLaunch_ = bReadyToLaunch;
+}
+
+
+
 void CraftInfo::calcAscentRate()
 {
 	float deltaTime = currentAltitude_.time() - previousAltitude_.time();
@@ -35,6 +49,11 @@ void CraftInfo::setAltitude(DataPoint<float> newAltitude)
 {
 	previousAltitude_ = currentAltitude_;
 	currentAltitude_ = newAltitude;
+
+	if (currentAltitude_.value() > maxAltitude_.value())
+	{
+		maxAltitude_ = currentAltitude_;
+	}
 	
 	calcAscentRate();
 }
@@ -46,3 +65,33 @@ float CraftInfo::ascentRate()
 	return ascentRate_.value();
 }
 
+
+
+void CraftInfo::setGroundAltitude(float groundAltitude)
+{
+	groundAltitude_ = groundAltitude;
+}
+
+
+
+float CraftInfo::groundAltitude()
+{
+	return groundAltitude_;
+}
+
+
+
+DataPoint<float> CraftInfo::maxAltitude()
+{
+	return maxAltitude_;
+}
+
+
+
+DataPoint<float> CraftInfo::maxAltitudeAboveGround()
+{
+	return DataPoint<float>(
+		maxAltitude_.time(),
+		maxAltitude_.value() - groundAltitude_
+	);
+}

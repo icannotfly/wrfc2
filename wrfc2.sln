@@ -5,16 +5,60 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wrfc2", "wrfc2.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList-1.3.2", "C:\Users\dissonance\Documents\Arduino\libraries\LinkedList\LinkedList-1.3.2.vcxitems", "{278438FE-2646-4F65-9447-7D51EE9179A6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Adafruit_SH110X-2.1.6", "C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_SH110X\Adafruit_SH110X-2.1.6.vcxitems", "{C267785B-49AA-4ED8-9B65-096439F88573}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Adafruit_GFX_Library-1.10.14", "C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_GFX_Library\Adafruit_GFX_Library-1.10.14.vcxitems", "{0C48868F-0478-46A6-8FDE-B27C3F7D841A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire-1.0", "C:\Users\dissonance\AppData\Local\arduino15\packages\adafruit\hardware\samd\1.7.10\libraries\Wire\Wire-1.0.vcxitems", "{FD96A243-841C-4AA6-B471-CA37183096A7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array-1.2.1", "C:\Users\dissonance\Documents\Arduino\libraries\Array\Array-1.2.1.vcxitems", "{DEACC170-5AEE-4C37-8F95-98168045E268}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Adafruit_DPS310-1.1.1", "C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_DPS310\Adafruit_DPS310-1.1.1.vcxitems", "{FA3D8560-020C-49F7-8EE1-2FB39E32F391}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StateMachine-1.0.13", "C:\Users\dissonance\Documents\Arduino\libraries\StateMachine\StateMachine-1.0.13.vcxitems", "{9DD488DF-CCA2-4C70-BE3C-CB3F4EEF8085}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wrfc2-tests", "..\wrfc2-tests\wrfc2-tests.vcxproj", "{57926A80-A090-45E9-9A5C-6350BACDCEA7}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_GFX_Library\Adafruit_GFX_Library-1.10.14.vcxitems*{0c48868f-0478-46a6-8fde-b27c3f7d841a}*SharedItemsImports = 9
+		C:\Users\dissonance\Documents\Arduino\libraries\LinkedList\LinkedList-1.3.2.vcxitems*{278438fe-2646-4f65-9447-7d51ee9179a6}*SharedItemsImports = 9
+		C:\Users\dissonance\Documents\Arduino\libraries\StateMachine\StateMachine-1.0.13.vcxitems*{9dd488df-cca2-4c70-be3c-cb3f4eef8085}*SharedItemsImports = 9
+		C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_SH110X\Adafruit_SH110X-2.1.6.vcxitems*{c267785b-49aa-4ed8-9b65-096439f88573}*SharedItemsImports = 9
+		C:\Users\dissonance\AppData\Local\arduino15\packages\adafruit\hardware\samd\1.7.10\libraries\Wire\Wire-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_DPS310\Adafruit_DPS310-1.1.1.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_GFX_Library\Adafruit_GFX_Library-1.10.14.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_SH110X\Adafruit_SH110X-2.1.6.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		C:\Users\dissonance\Documents\Arduino\libraries\Array\Array-1.2.1.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		C:\Users\dissonance\Documents\Arduino\libraries\LinkedList\LinkedList-1.3.2.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		C:\Users\dissonance\Documents\Arduino\libraries\StateMachine\StateMachine-1.0.13.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		C:\Users\dissonance\Documents\Arduino\libraries\Array\Array-1.2.1.vcxitems*{deacc170-5aee-4c37-8f95-98168045e268}*SharedItemsImports = 9
+		C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_DPS310\Adafruit_DPS310-1.1.1.vcxitems*{fa3d8560-020c-49f7-8ee1-2fb39e32f391}*SharedItemsImports = 9
+		C:\Users\dissonance\AppData\Local\arduino15\packages\adafruit\hardware\samd\1.7.10\libraries\Wire\Wire-1.0.vcxitems*{fd96a243-841c-4aa6-b471-ca37183096a7}*SharedItemsImports = 9
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x64.ActiveCfg = Debug|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x64.ActiveCfg = Release|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x64.ActiveCfg = Debug|x64
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x64.Build.0 = Debug|x64
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x86.ActiveCfg = Debug|Win32
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x86.Build.0 = Debug|Win32
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x64.ActiveCfg = Release|x64
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x64.Build.0 = Release|x64
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x86.ActiveCfg = Release|Win32
+		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
