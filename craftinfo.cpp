@@ -4,9 +4,10 @@
 
 
 CraftInfo::CraftInfo() : 
-	currentAltitude_(DataPoint<float>(0, 0)),
-	previousAltitude_(DataPoint<float>(0, 0)),
-	ascentRate_(DataPoint<float>(0, 0))
+	currentAltitude_(	DataPoint<float>(0, 0)),
+	previousAltitude_(	DataPoint<float>(0, 0)),
+	ascentRate_(		DataPoint<float>(0, 0)),
+	maxAltitude_(		DataPoint<float>(0, -1000))
 { }
 
 

@@ -28,13 +28,6 @@ CraftInfo craft;
 Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
 StateMachine sm = StateMachine();
 
-// distance/rate
-//float groundAltitude = 0;	// the measured ground/starting altitude, in m
-//float maxAltitude = -100;	// maximum altitude, in m, reached during this flight
-//float currentAltitude = 0;	// current altitude, in m
-//float lastAltitude = 0;		// the last measured altitude, in m
-//float ascentRate = 0;		// rate, in m/s, in which we are ascending
-
 // time
 unsigned long deltaTime = 0;
 unsigned long lastMillis = 0;
@@ -63,6 +56,8 @@ void setup()
 	// determine what the ground altitude is
 	craft.setGroundAltitude(calibrateGroundAltitude());	// TODO pass the number of samples in as a param
 
+	// good to go
+	craft.setReadyToLaunch(true);
 	display.print("done!");
 	display.display();
 }
@@ -102,14 +97,16 @@ void loop()
 	// first line info
 	display.print("wrfc2 ");
 	display.print(VERSION);
-	display.print(" build ");
+	display.print(" b ");
 	display.print(BUILD);
 	display.print("\n\n");
 
 	// remaining line headers
 	display.setCursor(0, OFFSET_STATE);
-	display.print("state ");
+	display.print("s");
 	display.print(sm.currentState);
+	display.print(": ");
+	display.print(getCurrentStateName(&sm));
 
 	display.setCursor(0, OFFSET_ALTITUDE);
 	display.print("a: ");
@@ -146,7 +143,7 @@ void loop()
 		display.print("m");
 
 		display.setCursor((9*6), OFFSET_MAX_ALT);
-		display.print(craft.maxAltitude());
+		display.print(craft.maxAltitude().value());
 		display.print("m");
 
 		display.setCursor((4 * 6), OFFSET_ASCENT_RATE);
