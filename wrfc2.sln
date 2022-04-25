@@ -19,8 +19,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Adafruit_DPS310-1.1.1", "C:
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StateMachine-1.0.13", "C:\Users\dissonance\Documents\Arduino\libraries\StateMachine\StateMachine-1.0.13.vcxitems", "{9DD488DF-CCA2-4C70-BE3C-CB3F4EEF8085}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wrfc2-tests", "..\wrfc2-tests\wrfc2-tests.vcxproj", "{57926A80-A090-45E9-9A5C-6350BACDCEA7}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		C:\Users\dissonance\Documents\Arduino\libraries\Adafruit_GFX_Library\Adafruit_GFX_Library-1.10.14.vcxitems*{0c48868f-0478-46a6-8fde-b27c3f7d841a}*SharedItemsImports = 9
@@ -51,14 +49,6 @@ Global
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x64.ActiveCfg = Release|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x64.ActiveCfg = Debug|x64
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x64.Build.0 = Debug|x64
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x86.ActiveCfg = Debug|Win32
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Debug|x86.Build.0 = Debug|Win32
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x64.ActiveCfg = Release|x64
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x64.Build.0 = Release|x64
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x86.ActiveCfg = Release|Win32
-		{57926A80-A090-45E9-9A5C-6350BACDCEA7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

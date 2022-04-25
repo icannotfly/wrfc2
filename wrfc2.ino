@@ -95,33 +95,37 @@ void loop()
 	resetDisplay(&display);
 
 	// first line info
-	display.print("wrfc2 ");
+	display.print("  wrfc2 ");
 	display.print(VERSION);
 	display.print(" b ");
 	display.print(BUILD);
-	display.print("\n\n");
 
-	// remaining line headers
+	// remaining static line headers
 	display.setCursor(0, OFFSET_STATE);
-	display.print("s");
+	if (sm.currentState < 10) // ghetto padding
+	{
+		display.print("s");
+	}
 	display.print(sm.currentState);
 	display.print(": ");
 	display.print(getCurrentStateName(&sm));
 
-	display.setCursor(0, OFFSET_ALTITUDE);
-	display.print("a: ");
+	display.setCursor((6 * 6), OFFSET_TEMP_PRES);
+	display.print("C");
+	display.setCursor((18 * 6), OFFSET_TEMP_PRES);
+	display.print("hPa");
 
-	display.setCursor(0, OFFSET_DELTA_ALTITUDE);
-	display.print("da: ");
+	display.setCursor(0, OFFSET_CURRENT_ALTITUDE);
+	display.print("current          m");
 
-	display.setCursor(0, OFFSET_MAX_ALT);
-	display.print("max alt: ");
-
+	display.setCursor(0, OFFSET_MAX_ALTITUDE);
+	display.print("max              m");
+	
+	display.setCursor(0, OFFSET_GROUND_ALTITUDE);
+	display.print("ground           m");
+	
 	display.setCursor(0, OFFSET_ASCENT_RATE);
-	display.print("ar: ");
-
-	display.setCursor(0, OFFSET_DT);
-	display.print("dt: ");
+	display.print("v rate           m/s");
 
 
 
@@ -130,30 +134,23 @@ void loop()
 	{
 		display.setCursor(0, OFFSET_TEMP_PRES);
 		display.print(baroTemp);
-		display.print("C  ");
+		display.setCursor((10 * 6), OFFSET_TEMP_PRES);
 		display.print(baroPres);
-		display.print("hPa");
 
-		display.setCursor((3*6), OFFSET_ALTITUDE);
+		display.setCursor((((craft.currentAltitude() >= 10) ? 10 : 11) * 6), OFFSET_CURRENT_ALTITUDE);
 		display.print(craft.currentAltitude());
-		display.print("m");
 
-		display.setCursor((3*6), OFFSET_DELTA_ALTITUDE);
-		display.print(craft.currentAltitude() - craft.groundAltitude());
-		display.print("m");
-
-		display.setCursor((9*6), OFFSET_MAX_ALT);
+		display.setCursor((((craft.maxAltitude().value() >= 10) ? 10 : 11) * 6), OFFSET_MAX_ALTITUDE);
 		display.print(craft.maxAltitude().value());
-		display.print("m");
 
-		display.setCursor((4 * 6), OFFSET_ASCENT_RATE);
-		display.print(craft.ascentRate());
-		display.print("m/s");
+		display.setCursor((((craft.groundAltitude() >= 10) ? 10 : 11) * 6), OFFSET_GROUND_ALTITUDE);
+		display.print(craft.groundAltitude());
 
-		display.setCursor((4 * 6), OFFSET_DT);
-		display.print(deltaTime);
-		display.print("ms");
-		
+		display.setCursor((((craft.ascentRate() >= 10) ? 10 : 11) * 6), OFFSET_ASCENT_RATE);
+		display.print(abs(craft.ascentRate()));
+		display.setCursor((9 * 6), OFFSET_ASCENT_RATE);
+		display.print(craft.ascentRate() > 0 ? "+" : "-");
+
 		// only draw if there are updates to draw, otherwise it will flicker
 		display.display();
 	}

@@ -56,3 +56,11 @@
 
 ### Fixed
 - Cleaned up includes.
+
+
+
+## 0.3.1 - 2022-04-25
+
+### Changed
+- Altered the formatting of information on the main display to be more readable.
+

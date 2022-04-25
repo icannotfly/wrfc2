@@ -10,8 +10,8 @@
 
 
 // code version
-#define VERSION "0.3.0"
-#define BUILD "102"
+#define VERSION "0.3.1"
+#define BUILD "106"
 
 
 
