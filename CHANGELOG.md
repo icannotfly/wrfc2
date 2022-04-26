@@ -64,3 +64,13 @@
 ### Changed
 - Altered the formatting of information on the main display to be more readable.
 
+
+
+## 0.3.2 - 2022-04-25
+
+### Added
+- padWith()
+
+### Changed
+- The code updating the display now makes use of padWidth().
+

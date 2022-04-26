@@ -10,14 +10,20 @@
 
 
 // code version
-#define VERSION "0.3.1"
-#define BUILD "106"
+#define VERSION "0.3.2"
+#define BUILD "107"
 
 
 
 // types
 typedef unsigned long ulong;
 typedef unsigned int uint;
+
+
+
+// utils
+// pads toPad to length specified by padLenth
+String padWith(String toPad, char padChar, int padLength);
 
 
 

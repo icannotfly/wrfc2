@@ -116,16 +116,16 @@ void loop()
 	display.print("hPa");
 
 	display.setCursor(0, OFFSET_CURRENT_ALTITUDE);
-	display.print("current          m");
+	display.print("current           m");
 
 	display.setCursor(0, OFFSET_MAX_ALTITUDE);
-	display.print("max              m");
+	display.print("max               m");
 	
 	display.setCursor(0, OFFSET_GROUND_ALTITUDE);
-	display.print("ground           m");
+	display.print("ground            m");
 	
 	display.setCursor(0, OFFSET_ASCENT_RATE);
-	display.print("v rate           m/s");
+	display.print("v rate            m/s");
 
 
 
@@ -137,17 +137,17 @@ void loop()
 		display.setCursor((10 * 6), OFFSET_TEMP_PRES);
 		display.print(baroPres);
 
-		display.setCursor((((craft.currentAltitude() >= 10) ? 10 : 11) * 6), OFFSET_CURRENT_ALTITUDE);
-		display.print(craft.currentAltitude());
+		display.setCursor((10 * 6), OFFSET_CURRENT_ALTITUDE);
+		display.print(padWith(String(craft.currentAltitude()), ' ', 7));
 
-		display.setCursor((((craft.maxAltitude().value() >= 10) ? 10 : 11) * 6), OFFSET_MAX_ALTITUDE);
-		display.print(craft.maxAltitude().value());
+		display.setCursor((10 * 6), OFFSET_MAX_ALTITUDE);
+		display.print(padWith(String(craft.maxAltitude().value()), ' ', 7));
 
-		display.setCursor((((craft.groundAltitude() >= 10) ? 10 : 11) * 6), OFFSET_GROUND_ALTITUDE);
-		display.print(craft.groundAltitude());
+		display.setCursor((10 * 6), OFFSET_GROUND_ALTITUDE);
+		display.print(padWith(String(craft.groundAltitude()), ' ', 7));
 
-		display.setCursor((((craft.ascentRate() >= 10) ? 10 : 11) * 6), OFFSET_ASCENT_RATE);
-		display.print(abs(craft.ascentRate()));
+		display.setCursor((10 * 6), OFFSET_ASCENT_RATE);
+		display.print(padWith(String(abs(craft.ascentRate())), ' ', 7));
 		display.setCursor((9 * 6), OFFSET_ASCENT_RATE);
 		display.print(craft.ascentRate() > 0 ? "+" : "-");
 
@@ -158,4 +158,17 @@ void loop()
 
 
 	delay(250);
+}
+
+
+
+String padWith(String toPad, char padChar, int padLength)
+{
+	String ret = "";
+	for (int i = 0; i < padLength - toPad.length(); i++)
+	{
+		ret += padChar;
+	}
+	ret += toPad;
+	return ret;
 }

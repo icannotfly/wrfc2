@@ -20,10 +20,10 @@
 1 |  wrfc2 0.3.0 b 100		version, build
 2 |01: WAITING TO LAUNCH	state number, state name
 3 |28.04 C   1012.90 hPa	temp, pressure
-4 |current   __2.34 m		current alt
-5 |max       _52.51 m		max alt
-6 |ground    __2.01 m		ground alt
-7 |v rate   +__2.45 m/s		ascent rate
+4 |current      2.34 m		current alt
+5 |max         52.51 m		max alt
+6 |ground       2.01 m		ground alt
+7 |v rate   +   2.45 m/s	ascent rate
 8 |
 */
 #define OFFSET_STATE OFFSET_LINE_2
