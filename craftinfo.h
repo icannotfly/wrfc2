@@ -13,7 +13,7 @@ private:
 	DataPoint<float> previousAltitude_;
 	DataPoint<float> ascentRate_;
 
-	// calculates the ascent rate. if no previous rate exists, rate will be set to 0.
+	// calculates the ascent rate (vertical velocity). if no previous rate exists, rate will be set to 0.
 	void calcAscentRate();
 
 	float groundAltitude_;
@@ -35,7 +35,7 @@ public:
 	// sets the craft's current altitude. doing so will automatically calculate the ascent rate.
 	void setAltitude(DataPoint<float> a);
 
-	// returns the craft's current ascent rate in m/s
+	// returns the craft's current ascent rate in m/s.  positive values indicate travel away from Earth, negative values towards it.
 	float ascentRate();
 
 	// sets the ground/starting altitude. takes a single value, does not do any averaging.

@@ -110,7 +110,7 @@ bool stLaunchDetected()
 
 bool stApogeeDetected()
 {
-	return false;
+	return craft.ascentRate() <= 0.5;
 }
 
 

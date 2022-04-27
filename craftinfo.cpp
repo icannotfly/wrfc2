@@ -29,7 +29,7 @@ void CraftInfo::setReadyToLaunch(bool bReadyToLaunch /*= true*/)
 void CraftInfo::calcAscentRate()
 {
 	float deltaTime = currentAltitude_.time() - previousAltitude_.time();
-	float deltaAlt = (previousAltitude_.time() == 0) ? 0.0 : deltaAlt = currentAltitude_.value() - previousAltitude_.value();
+	float deltaAlt = (previousAltitude_.time() == 0) ? 0.0 : currentAltitude_.value() - previousAltitude_.value();
 
 	ascentRate_ = DataPoint<float>(
 		millis(),
